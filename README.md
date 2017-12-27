@@ -5,3 +5,5 @@
 1. checksum the results, and if they all match, the lfs is good; otherwise diff the fucking hex dumps
 1. make linux great again; build a fucking firewall, and make "them" fucking [pay](https://en.wikipedia.org/wiki/Denial-of-service_attack) for it
 1. covfefe
+
+need to study electrical engineering to formally verify open hardware

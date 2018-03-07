@@ -7,3 +7,5 @@
 1. covfefe
 
 need to study electrical engineering to formally verify open hardware
+
+flashy "-things" are unsupported; but that's a good "-thing"...

@@ -6,16 +6,17 @@
 # http://matrix.wikia.com/wiki/Prime_Program                   #
 ################################################################
 
-# wibbly wobbly, timey wimey; who is the ~~ of them all? timezones are irrelevant anyway...
 ; my $database = $*PROGRAM-NAME
 ; $database ~~ s/p6$/log/
-; my $time = '2018-03-31T12:51:22.637116Z'
+
+# wibbly wobbly, timey wimey; who is the ~~ of them all? timezones are irrelevant anyway...
+; my $time = '2018-03-31T14:56:38.195925Z'
 ; my $then = DateTime.new($time)
 ; my $now = DateTime.new(now)
 ; my $seconds = $now - $then
-; my $minutes = $seconds/60
-; my $hours = $minutes/60
-; my $days = $hours/24
+; my $minutes = $seconds÷60
+; my $hours = $minutes÷60
+; my $days = $hours÷24
 ; my @time := $seconds, $minutes, $hours, $days
 ; @time.map({
 	; say

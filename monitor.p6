@@ -6,11 +6,10 @@
 # http://matrix.wikia.com/wiki/Prime_Program                   #
 ################################################################
 
-; my $database = $*PROGRAM-NAME
-; $database ~~ s/p6$/log/
+; my $database = {; $_ = $*PROGRAM-NAME; s/p6$/log/; $_}()
 
 # wibbly wobbly, timey wimey; who is the ~~ of them all? timezones are irrelevant anyway...
-; my $time = '2018-03-31T14:56:38.195925Z'
+; my $time = '2018-03-31T23:00:59.780384Z'
 ; my $then = DateTime.new($time)
 ; my $now = DateTime.new(now)
 ; my $seconds = $now - $then
@@ -18,10 +17,11 @@
 ; my $hours = $minutes÷60
 ; my $days = $hours÷24
 ; my @time := $seconds, $minutes, $hours, $days
+; "\ec".print
 ; @time.map({
 	; say
 		.VAR.name.substr(1).wordcase.fmt('%-7s: ')
-		~ Int($_).fmt("%.{@time.map({
+		~ .Int().fmt("%.{@time.map({
 			# hopefully this will be memoised
 			; .Int().chars
 		}).max}d")
@@ -93,18 +93,12 @@
 	; my @d
 	; @data.map({
 		# $query ~~ $pattern
-		; if (.cache.join(" ")) !~~ $pattern {
+		; if .cache.join(" ") !~~ $pattern {
 			; $s += $_[0]
 			; @d.append($_)
+			; last if $seconds < $s
 		} else {last}
-		; last if $seconds < $s
 	})
 	# $y = [[$s<=60×60, ''], [60×60<=$s, 'do the "-thing"!']]
-	; my $short_circuit = True
-	; @reminders.map({
-		; if $_[0] <= $s and $short_circuit {
-			; say $_[1]
-			; $short_circuit = False
-		}
-	})
+	; @reminders.map({; if $_[0] <= $s {; say $_[1]; last}})
 }

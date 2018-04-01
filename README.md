@@ -9,3 +9,7 @@
 need to study electrical engineering to formally verify open hardware
 
 flashy "-things" are unsupported; but that's a good "-thing"...
+
+# Perl6
+
+I'm a [warrior](http://strangelyconsistent.org/blog/perl-6-is-my-mmorpg), fleeing from the Cylon tyranny, on the last battlestar, Galactica, leading a ragtag fugitive fleet on a lonely quest: a shining planet known as Earth.

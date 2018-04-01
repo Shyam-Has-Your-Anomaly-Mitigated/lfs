@@ -2,17 +2,20 @@
 # tempoℝæl orientation
 # good for sleep, study, work, play, ETC
 
+; use v6.c
+
 ################################################################
 # http://matrix.wikia.com/wiki/Prime_Program                   #
 ################################################################
 
 ; my $database = {; $_ = $*PROGRAM-NAME; s/p6$/log/; $_}()
+; my $configuration = {; $_ = $*PROGRAM-NAME; s/p6$/cfg/; $_}()
 
 # wibbly wobbly, timey wimey; who is the ~~ of them all? timezones are irrelevant anyway...
-; my $time = '2018-03-31T23:00:59.780384Z'
+; my $time = '2018-04-01T11:02:02.776539Z'
 ; my $then = DateTime.new($time)
 ; my $now = DateTime.new(now)
-; my $seconds = $now - $then
+; my $seconds = $now-$then
 ; my $minutes = $seconds÷60
 ; my $hours = $minutes÷60
 ; my $days = $hours÷24
@@ -48,33 +51,7 @@
 ; my $data = slurp $database
 ; my @data = $data.split("\n").map({.split(' ')})
 ; print "\nreminders:\n"
-
-# have you slept for 1×8×60×60 seconds in the last 2×8×60×60 seconds?
-# zzz is a good one; a very unix-like TLA
-; my $sleep_t = 2×8×60²
-; my $sleep_p = /^.*(slept|sleep(ing)?|(snooz|snor)(e|ing)|(lucid )?dream(s|ing)?|zzz).*$/
-; datamine $sleep_t, $sleep_p, [
-	[$sleep_t, 'you should sleep!']
-	, [$sleep_t-60², 'are you tired?']
-]
-
-# have you drank in the last 1×60×60 seconds?
-; my $thirst_t = 60²
-; my $thirst_p = /^.*(water|drank|drink|(re)?hydrate).*$/
-; datamine $thirst_t, $thirst_p, [
-	[$thirst_t*3, 'you should drink water!']
-	, [$thirst_t, 'are you thirsty?']
-]
-
-# have you eaten in the last 1×60×60 seconds?
-# what did you eat, how much, and what was in it?
-# did you get enough $x nutrition?
-; my $hunger_t = 60²
-; my $hunger_p = /^.*(food|ate|eat(en)?|hunger).*$/
-; datamine $hunger_t, $hunger_p, [
-	[$hunger_t*3, 'you should eat!']
-	, [$hunger_t, 'are you hungry?']
-]
+; datamine | $_ for EVALFILE $configuration
 
 ################################################################
 # escape                                                       #
@@ -95,7 +72,7 @@
 		# $query ~~ $pattern
 		; if .cache.join(" ") !~~ $pattern {
 			; $s += $_[0]
-			; @d.append($_)
+			; @d.push($_)
 			; last if $seconds < $s
 		} else {last}
 	})

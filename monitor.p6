@@ -12,7 +12,7 @@
 ; my $configuration = {; $_ = $*PROGRAM-NAME; s/p6$/cfg/; $_}()
 
 # wibbly wobbly, timey wimey; who is the ~~ of them all? timezones are irrelevant anyway...
-; my $time = '2018-04-01T11:02:02.776539Z'
+; my $time = '0003-03-03T03:03:03' # '0003-03-03T03:03:03'
 ; my $then = DateTime.new($time)
 ; my $now = DateTime.new(now)
 ; my $seconds = $now-$then
@@ -77,5 +77,5 @@
 		} else {last}
 	})
 	# $y = [[$s<=60×60, ''], [60×60<=$s, 'do the "-thing"!']]
-	; @reminders.map({; if $_[0] <= $s {; say $_[1]; last}})
+	; @reminders.sort.reverse.map({; if $_[0] <= $s {; say $_[1]; last}})
 }

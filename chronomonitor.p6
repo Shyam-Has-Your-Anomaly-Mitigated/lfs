@@ -8,8 +8,8 @@
 # http://matrix.wikia.com/wiki/Prime_Program                   #
 ################################################################
 
-; my $database = {; $_ = $*PROGRAM-NAME; s/p6$/log/; $_}()
-; my $configuration = {; $_ = $*PROGRAM-NAME; s/p6$/cfg/; $_}()
+; my $database = S/p6$/log/ given $*PROGRAM-NAME
+; my $configuration = S/p6$/cfg/ given $*PROGRAM-NAME
 
 # wibbly wobbly, timey wimey; who is the ~~ of them all? timezones are irrelevant anyway...
 ; my $time = '0003-03-03T03:03:03' # '0003-03-03T03:03:03'
@@ -37,8 +37,7 @@
 
 # update $time
 ; my $name = $*PROGRAM-NAME
-; my $self-modifying_code = slurp $name
-; $self-modifying_code ~~ s/('; my $time = \'')(.*?)('\'')/$0$now$2/
+; my $self-modifying_code = S/('; my $time = \'')(.*?)('\'')/$0$now$2/ given slurp $name
 ; spurt $name, $self-modifying_code
 
 # update $database

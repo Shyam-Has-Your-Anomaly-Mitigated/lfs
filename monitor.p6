@@ -69,12 +69,10 @@
 	; my @reminders = @r.sort.reverse
 	; my $seconds = @reminders[0][0]
 	; my $s = 0
-	; my @d
 	; @data.map({
 		# $query ~~ $pattern
 		; if .cache.join(" ") !~~ $pattern {
 			; $s += $_[0]
-			; @d.push($_)
 			; last if $seconds < $s
 		} else {last}
 	})

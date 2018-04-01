@@ -8,8 +8,8 @@
 # http://matrix.wikia.com/wiki/Prime_Program                   #
 ################################################################
 
-; my $database = {S/p6$/log/}($*PROGRAM-NAME)
-; my $configuration = {S/p6$/cfg/}($*PROGRAM-NAME)
+; my $database = {; S/p6$/log/}($*PROGRAM-NAME)
+; my $configuration = {; S/p6$/cfg/}($*PROGRAM-NAME)
 
 # wibbly wobbly, timey wimey; who is the ~~ of them all? timezones are irrelevant anyway...
 ; my $time = '0003-03-03T03:03:03' # '0003-03-03T03:03:03'
@@ -24,7 +24,7 @@
 ; @time.map({
 	; say
 		.VAR.name.substr(1).wordcase.fmt('%-7s: ')
-		~ .Int().fmt("%.{@time.map({
+		~ .Int().fmt("%.{; @time.map({
 			# hopefully this will be memoised
 			; .Int().chars
 		}).max}d")
@@ -37,7 +37,7 @@
 
 # update $time
 ; my $name = $*PROGRAM-NAME
-; my $self-modifying_code = {S/('; my $time = \'')(.*?)('\'')/$0$now$2/}(slurp $name)
+; my $self-modifying_code = {; S/('; my $time = \'')(.*?)('\'')/$0$now$2/}(slurp $name)
 ; spurt $name, $self-modifying_code
 
 # update $database
@@ -48,7 +48,7 @@
 ################################################################
 
 ; my $data = slurp $database
-; my @data = $data.split("\n").map({.split(' ')})
+; my @data = $data.split("\n").map({; .split(' ')})
 ; print "\nreminders:\n"
 ; datamine | $_ for EVALFILE $configuration
 
@@ -73,7 +73,7 @@
 		; if .cache.join(" ") !~~ $pattern {
 			; $s += $_[0]
 			; last if $seconds < $s
-		} else {last}
+		} else {; last}
 	})
 	# $y = [[$s<=60×60, ''], [60×60<=$s, 'do the "-thing"!']]
 	; @reminders.map({; if $_[0] <= $s {; say $_[1]; last}})

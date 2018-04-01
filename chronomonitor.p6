@@ -33,7 +33,7 @@
 
 # expect "sleep", or any"-thing" else; not sleeping means awake
 ; my $query = prompt "\nWhat have you \$pent all this time on? "
-; prompt "\nWell, I hope it was worth it; you won't be getting a refund!"
+; prompt "\nWell, I hope it was worth it ∵ you won't be getting a refund!"
 
 # update $time
 ; my $name = $*PROGRAM-NAME

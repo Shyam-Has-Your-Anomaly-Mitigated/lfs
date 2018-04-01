@@ -14,4 +14,4 @@ flashy "-things" are unsupported; but that's a good "-thing"...
 
 I'm a [warrior](http://strangelyconsistent.org/blog/perl-6-is-my-mmorpg), fleeing from the Cylon tyranny, on the last battlestar, Galactica, leading a ragtag fugitive fleet on a lonely quest: a shining planet known as Earth.
 
-my $[questing beast](http://lostinspace.wikia.com/wiki/The_Questing_Beast) = [the wizards](http://forlackofabettercomic.com/?id=47)
+; my $[questing beast](http://lostinspace.wikia.com/wiki/The_Questing_Beast) = [the wizards](http://forlackofabettercomic.com/?id=47)

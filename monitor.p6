@@ -64,8 +64,10 @@
 # subroutines                                                  #
 ################################################################
 
-; sub datamine($seconds, $pattern, @reminders) {
+; sub datamine($pattern, @r) {
 	# add seconds from top of database to find time between $now & $seconds time
+	; my @reminders = @r.sort.reverse
+	; my $seconds = @reminders[0][0]
 	; my $s = 0
 	; my @d
 	; @data.map({
@@ -77,5 +79,5 @@
 		} else {last}
 	})
 	# $y = [[$s<=60×60, ''], [60×60<=$s, 'do the "-thing"!']]
-	; @reminders.sort.reverse.map({; if $_[0] <= $s {; say $_[1]; last}})
+	; @reminders.map({; if $_[0] <= $s {; say $_[1]; last}})
 }

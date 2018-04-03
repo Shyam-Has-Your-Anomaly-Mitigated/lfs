@@ -15,3 +15,30 @@ priority 2: diet.dot
 priority 3: physical health (only partial dot, and is a subgraph of a bigger picture)
 	gym & pool
 priority 4: pending...probably study (not uni)...then uni...then ETC...
+
+every day: read chapter, watch video, listen audio, or $pend at least an hour on...
+	AA:
+	BB:
+	CC: vim/perl
+	DD: perl/linux
+	EE: lisp
+	FF: maths
+	GG: haskell
+
+╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳
+╳                              00──┐                           ╳
+╳                         23┌───┐  │01                         ╳
+╳                    22┌────┘   │  └────┐02                    ╳
+╳               21─────┘    goto sleep  └────┐03               ╳
+╳     GG   20────┐                           └────┐04          ╳
+╳FF   19         no lights/computer/ETC           └────┐05     ╳
+╳18                                 at least 8hrs sleep╞════╡06╳
+╳FF   17                                           └───┘07     ╳
+╳     EE   16     gym & pool                       08          ╳
+╳          DD   15└────┐                      09   AA          ╳
+╳               CC   14└────┐      ┌─────10   BB               ╳
+╳                         13└──────┘11                         ╳
+╳                              12                              ╳
+╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳
+
+who needs sticky notes on a physical wall? I do... ⚭

@@ -23,12 +23,12 @@
 ; "\ec".print
 ; @time.map({
 	; say
-		.VAR.name.substr(1).wordcase.fmt('%-7s: ')
+		{; S/.(.)(.*)/{; $0.uc}$1/}(.VAR.name).fmt('%-7s: ')
 		~ .Int().fmt("%.{; @time.map({
 			# hopefully this will be memoised
 			; .Int().chars
 		}).max}d")
-		~ ($_%1).fmt('%.3f').substr(1)
+		~ {; S/.(.*)/$0/}(($_%1).fmt('%.3f'))
 })
 
 # expect "sleep", or any"-thing" else; not sleeping means awake
@@ -37,7 +37,7 @@
 
 # update $time
 ; my $name = $*PROGRAM-NAME
-; my $self-modifying_code = {; S/('; my $time = \'')(.*?)('\'')/$0$now$2/}(slurp $name)
+; my $self-modifying_code = {; S/('; my $time = \'').*?('\'')/$0$now$1/}(slurp $name)
 ; spurt $name, $self-modifying_code
 
 # update $database
@@ -77,4 +77,5 @@
 	})
 	# $y = [[$s<=60×60, ''], [60×60<=$s, 'do the "-thing"!']]
 	; @reminders.map({; if $_[0] <= $s {; say $_[1]; last}})
+	; print '' # WTF?!?
 }

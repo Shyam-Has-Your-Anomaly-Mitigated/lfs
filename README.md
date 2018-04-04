@@ -15,3 +15,15 @@ flashy "-things" are unsupported; but that's a good "-thing"...
 I'm a [warrior](http://strangelyconsistent.org/blog/perl-6-is-my-mmorpg), fleeing from the Cylon tyranny, on the last battlestar, Galactica, leading a ragtag fugitive fleet on a lonely quest: a shining planet known as Earth.
 
 ; my $[questing beast](http://lostinspace.wikia.com/wiki/The_Questing_Beast) = @[the wizards](http://forlackofabettercomic.com/?id=47)
+
+# Plan
+
+Get other scripts off HDD, make new repo "shyam", `mv` non-Linux-specific instructions in that repo
+
+`~/bin/shyam f x y z` will modulate `~/bin/SHYAM/f x y z`; this way I'll know which ones are mine
+
+the perl wrapper is a good starting point for `~/bin/shyam`
+
+`SHYAM` should probably be the program name ∵ it's faster to autocomplete; but I'll probably just alias `s` instead, for `s chronmonitor`
+
+no redundant dashes; just be consistent, and use `s f 3 y=3 x=3` (`=` has precedence, and the leftovers are FIFO)

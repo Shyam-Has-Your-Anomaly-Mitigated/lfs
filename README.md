@@ -26,4 +26,4 @@ the perl wrapper is a good starting point for `~/bin/shyam`
 
 `SHYAM` should probably be the program name ∵ it's faster to autocomplete; but I'll probably just alias `s` instead, for `s chronmonitor`
 
-no redundant dashes; just be consistent, and use `s f 3 y=3 x=3` (`=` has precedence, and the leftovers are FIFO)
+no redundant dashes; just be consistent, and use `f 3 y=3 x=3` (`=` has precedence, and the leftovers are FIFO)

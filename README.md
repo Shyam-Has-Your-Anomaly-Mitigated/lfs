@@ -18,7 +18,7 @@ I'm a [warrior](http://strangelyconsistent.org/blog/perl-6-is-my-mmorpg), fleein
 
 # Plan
 
-Get other scripts off HDD, make new repo "shyam", `mv` non-Linux-specific instructions in that repo
+Get other scripts off HDD, make new repo "shyam", `mv` non-Linux-specific instructions to that repo
 
 `~/bin/shyam f x y z` will modulate `~/bin/SHYAM/f x y z`; this way I'll know which ones are mine
 

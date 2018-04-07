@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+# `scanimage -L`
+device=imagescan:esci:usb:/sys/devices/pci0000:00/0000:00:12.2/usb1/1-1/1-1:1.0;
+fmt=pnm;
+ext=png;
+d_name="$1";
+f_name_start="$2";
+f_name_end=" (%d).$fmt";
+
+mkdir "$d_name";
+scanimage -d "$device" --scan-area 'Auto Detect' --duplex --format="$fmt" --batch="$f_name_start$f_name_end";
+for e in *.pnm;
+	# ';' & '&' are like Shyamscript dīkṣās, but you actually have to think about whether you want to fork; I feel like this is obvious...
+	do echo "converting ${e%.*}" && convert "${e}" "$d_name/${e%$fmt}$ext" && rm "$e" &
+done;

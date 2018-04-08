@@ -1,4 +1,17 @@
 #!/usr/bin/env sh
+# USAGE: `shyam scan "$d_name" "$f_name"`
+# TODO:
+	# https://www.google.com.au/search?q=pnm+vs+tiff
+		# I just chose default PNM ∵ /PN./ ∈ {PNM, PNG}
+	# SVG = DOT = OCR + box/line detection
+		# https://en.wikipedia.org/wiki/Edge_detection
+		# https://en.wikipedia.org/wiki/Pathfinding
+		# https://en.wikipedia.org/wiki/List_of_graph_theory_topics
+		# https://en.wikipedia.org/wiki/Layout_engine
+		# https://en.wikipedia.org/wiki/DOT_(graph_description_language)
+		# https://en.wikipedia.org/wiki/Prolog
+		# https://en.wikipedia.org/wiki/Outline_of_natural_language_processing
+		# https://en.wikipedia.org/wiki/Hyperlink
 
 # `scanimage -L`
 device=imagescan:esci:usb:/sys/devices/pci0000:00/0000:00:12.2/usb1/1-1/1-1:1.0;
@@ -14,3 +27,6 @@ for e in *.pnm;
 	# ';' & '&' are like Shyamscript dīkṣās, but you actually have to think about whether you want to fork; I feel like this is obvious...
 	do echo "converting ${e%.*}" && convert "${e}" "$d_name/${e%$fmt}$ext" && rm "$e" &
 done;
+
+# https://wiki.archlinux.org/index.php/SANE
+# https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion

@@ -21,7 +21,7 @@ d_name="$1";
 f_name_start="$2";
 f_name_end=" (%d).$fmt";
 
-mkdir "$d_name";
+mkdir -p "$d_name";
 scanimage -d "$device" --scan-area 'Auto Detect' --duplex --format="$fmt" --batch="$f_name_start$f_name_end";
 for e in *.pnm;
 	# ';' & '&' are like Shyamscript dīkṣās, but you actually have to think about whether you want to fork; I feel like this is obvious...
